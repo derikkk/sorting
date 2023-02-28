@@ -163,9 +163,9 @@ def quick_sorted(xs, cmp=cmp_standard):
     else:
         mid = len(xs) // 2
         pivot = xs[mid]
-        xs_lt = [x for x in xs if cmp(x < pivot) == -1]
-        xs_gt = [x for x in xs if cmp(x > pivot) == 1]
-        xs_eq = [x for x in xs if cmp(x == pivot) == 0]
+        xs_lt = [x for x in xs if cmp(x, pivot) == -1]
+        xs_gt = [x for x in xs if cmp(x, pivot) == 1]
+        xs_eq = [x for x in xs if cmp(x, pivot) == 0]
         xs_lt = quick_sorted(xs_lt, cmp=cmp)
         xs_gt = quick_sorted(xs_gt, cmp=cmp)
         return xs_lt + xs_eq + xs_gt
